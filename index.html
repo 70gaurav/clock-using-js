@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>clock</title>
 </head>
+
 <body>
     <div class="wrapper">
         <p></p>
     </div>
-    
+
 
     <script>
         let para = document.querySelector('p')
@@ -18,63 +20,74 @@
             let dt = new Date()
             let day = dayname(dt.getDay())
             let date = dt.getDate()
-            let month = monthName(dt.getMonth() )
+            let month = monthName(dt.getMonth())
             let year = dt.getFullYear()
             let hour = dt.getHours()
             let minutes = dt.getMinutes()
             let seconds = dt.getSeconds()
-            let output = day + "," + date + "/" + month + "/" + year + " " + hour + ":" +" " + minutes + ":"+ " " + seconds;
-             para.innerHTML = output 
+            if(seconds < 10){
+                seconds = "0"+seconds
+            }   
+            if(minutes < 10){
+                minutes = "0"+minutes
+            }  
+            if(hour < 10){
+                hour = "0"+hour
+            }  
+            let output = day + "," + date + "/" + month + "/" + year + " " + hour + ":" + " " + minutes + ":" + " " + seconds;
+            
+            para.innerHTML = output
 
-        },1000)
-        function dayname (day){
-            switch (day){
-                case 1 : return "Monday";
-                break;
-                case 2 : return "tuesday";
-                break;
-                case 3 : return "wednesday";
-                break;
-                case 4 : return "thursday";
-                break;
-                case 5 : return "friday";
-                break;
-                case 6 : return "saturday";
-                break;
-                case 7 : return "sunday";
-                break;
-                default : "error"
+        }, 1000)
+        function dayname(day) {
+            switch (day) {
+                case 1: return "Monday";
+                    break;
+                case 2: return "tuesday";
+                    break;
+                case 3: return "wednesday";
+                    break;
+                case 4: return "thursday";
+                    break;
+                case 5: return "friday";
+                    break;
+                case 6: return "saturday";
+                    break;
+                case 7: return "sunday";
+                    break;
+                default: "error"
             }
         }
-        function monthName (month){
-            switch (month){
-                case 0 : return "January";
-                break;
-                case 1 : return "February";
-                break;
-                case 2 : return "March";
-                break;
-                case 3 : return "April";
-                break;
-                case 4 : return "May";
-                break;
-                case 5 : return "June";
-                break;
-                case 6 : return "July";
-                break;
-                case 7 : return "August";
-                break;
-                case 8 : return "September";
-                break;
-                case 9 : return "October";
-                break;
-                case 10 : return "November";
-                break;
-                case 11 : return "December";
-                break;
-                default : "error"
+        function monthName(month) {
+            switch (month) {
+                case 0: return "January";
+                    break;
+                case 1: return "February";
+                    break;
+                case 2: return "March";
+                    break;
+                case 3: return "April";
+                    break;
+                case 4: return "May";
+                    break;
+                case 5: return "June";
+                    break;
+                case 6: return "July";
+                    break;
+                case 7: return "August";
+                    break;
+                case 8: return "September";
+                    break;
+                case 9: return "October";
+                    break;
+                case 10: return "November";
+                    break;
+                case 11: return "December";
+                    break;
+                default: "error"
             }
         }
     </script>
 </body>
+
 </html>
